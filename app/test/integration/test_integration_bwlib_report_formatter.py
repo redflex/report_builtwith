@@ -34,4 +34,4 @@ class TestReportFormatter:
         formatter = self.instantiate_report_formatter_csv()
         report_formatted = formatter.format_report(report_struct["Results"][0])
         assert isinstance(report_formatted, basestring)
-        assert len(base64.b64decode(report_formatted).split("\n")) == 217
+        assert len(base64.b64decode(report_formatted).split("\n")) == 218

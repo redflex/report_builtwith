@@ -59,7 +59,7 @@ class ReportFormatter(object):
         csv_obj = csv.DictWriter(out, fieldnames=cols)
         csv_obj.writeheader()
         csv_obj.writerows(rows)
-        return out.getvalue()
+        return out.getvalue() + "\n"
 
     @classmethod
     def encode_rows(cls, rows):

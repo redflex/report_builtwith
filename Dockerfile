@@ -6,13 +6,18 @@ RUN apk add -U \
 
 COPY app/ /app/
 
+COPY .pylintrc /app/
+
 RUN /usr/bin/python2.7 \
     -mpip install \
         pytest \
-        pytest-cover
+        pytest-cover \
+        pytest-pylint
 
 RUN /usr/bin/python2.7 \
     -mpy.test \
+        --pylint \
+        --pylint-rcfile=/app/.pylintrc \
         --cov-report term-missing \
         --cov=bwlib /app/test/
 
