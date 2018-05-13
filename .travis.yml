@@ -5,5 +5,5 @@ services:
 script:
   - docker build -t report_builtwith:latest .
   - export SCAN=`cat ./app/test/fixture/result_1.json | base64`
-  - docker run -it --rm -e "SCAN=$SCAN" -e "OUTPUT_FORMAT=MD" report_builtwith:latest | base64 --decode
-  - docker run -it --rm -e "SCAN=$SCAN" -e "OUTPUT_FORMAT=CSV" report_builtwith:latest | base64 --decode
+  - docker run -it --rm -e "SCAN=$SCAN" -e "OUTPUT_FORMAT=MD" report_builtwith:latest
+  - docker run -it --rm -e "SCAN=$SCAN" -e "OUTPUT_FORMAT=CSV" report_builtwith:latest
